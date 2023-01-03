@@ -1,16 +1,46 @@
 // ITERATION 1
+// For now, the only thing this function is doing is alerting Calculate Prices clicked! when the Calculate Prices button is clicked.
+// Step 1: Inside updateSubtotal(), create two variables (we suggest naming them price and quantity).
+console.log('EL JS ESTA CARGANDO CORRECTAMENTE');
 
 function updateSubtotal(product) {
-  console.log('Calculating subtotal, yey!');
+  const price = product.querySelector('.price span').innerText;
 
-  //... your code goes here
-}
+  const quantity = product.querySelector('.quantity input').value;
+
+  const subtotal = product.querySelector('.subtotal span');
+
+  subtotal.innerText = price * quantity;
+
+  const result = price * quantity;
+
+  product.querySelector('.subtotal span').innerText = result
+
+    return result
+
+  }
+
+// console.log(updateSubtotal());
+
+//console.log('Calculating subtotal, yey!');
 
 function calculateAll() {
-  // code in the following two lines is added just for testing purposes.
-  // it runs when only iteration 1 is completed. at later point, it can be removed.
-  const singleProduct = document.querySelector('.product');
-  updateSubtotal(singleProduct);
+  
+  const productArray = document.querySelectorAll('.product');
+
+let total = 0;
+
+  productArray.forEach((product) => {
+
+  const res = updateSubtotal(product);
+
+  total += res;
+
+});
+
+document.querySelector("#total-value span").innerText = total;
+
+  //console.log(total)
   // end of test
 
   // ITERATION 2

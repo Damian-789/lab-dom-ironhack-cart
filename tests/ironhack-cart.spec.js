@@ -1,6 +1,6 @@
 require('expect-puppeteer');
 
-// Helper Functions
+///Helper Functions
 const addProductsToCart = ({ products }) => {
   const cartTableBodyElement = document.querySelector('#cart tbody');
   for (const { price, quantity } of products) {
